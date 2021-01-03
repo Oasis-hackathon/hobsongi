@@ -1,17 +1,37 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import AuthPage from './AuthPage/AuthPage';
-import Page from './MainPage/Page';
 import MainDrawerNav from './MainDrawerNav';
+import auth from '@react-native-firebase/auth';
 
 const PageRouter = () => {
   const Stack = createStackNavigator();
+
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+
+  const onAuthStateChanged = (user) => {
+    setUser(user);
+    if (initializing) {
+      setInitializing(false);
+    }
+  };
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber;
+  }, []);
+
+  if (initializing) return null;
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name="Page" component={Page} /> */}
-      <Stack.Screen name="AuthPage" component={AuthPage} />
-      <Stack.Screen name="MainDrawerNav" component={MainDrawerNav} />
+      {!user ? (
+        <Stack.Screen name="AuthPage" component={AuthPage} />
+      ) : (
+        <Stack.Screen name="MainDrawerNav" component={MainDrawerNav} />
+      )}
     </Stack.Navigator>
   );
 };
