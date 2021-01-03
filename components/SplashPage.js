@@ -11,7 +11,7 @@ const SplashPage = () => {
         alignItems: 'center',
         backgroundColor: 'green',
       }}>
-      <Text>SplashPage</Text>
+      <Text style={{ fontSize: 30 }}>홉송이</Text>
     </View>
   );
 };

@@ -2,12 +2,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const Homepage = () => {
+const HomePage = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Homepage</Text>
+      <Text>HomePage</Text>
     </View>
   );
 };
 
-export default Homepage;
+export default HomePage;
