@@ -7,7 +7,6 @@ import auth from '@react-native-firebase/auth';
 
 const PageRouter = () => {
   const Stack = createStackNavigator();
-
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
 
@@ -16,6 +15,7 @@ const PageRouter = () => {
     if (initializing) {
       setInitializing(false);
     }
+    console.log(user);
   };
 
   useEffect(() => {
@@ -28,9 +28,13 @@ const PageRouter = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {!user ? (
-        <Stack.Screen name="AuthPage" component={AuthPage} />
+        <Stack.Screen name="AuthPage">
+          {(props) => <AuthPage {...props} />}
+        </Stack.Screen>
       ) : (
-        <Stack.Screen name="MainDrawerNav" component={MainDrawerNav} />
+        <Stack.Screen name="MainDrawerNav">
+          {(props) => <MainDrawerNav {...props} user={user} />}
+        </Stack.Screen>
       )}
     </Stack.Navigator>
   );
