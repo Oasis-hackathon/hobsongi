@@ -1,16 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
-import {
-  Avatar,
-  Title,
-  Caption,
-  Paragraph,
-  Drawer,
-  Text,
-  TouchableRipple,
-  Switch,
-} from 'react-native-paper';
+import { Avatar, Title, Caption, Paragraph, Drawer } from 'react-native-paper';
 import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -70,36 +61,36 @@ export const DrawerContent = (props) => {
 
           <Drawer.Section style={styles.drawerSection}>
             <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="home-outline" color={color} size={size} />
-              )}
+              // icon={({ color, size }) => (
+              //   <Icon name="home-outline" color={color} size={size} />
+              // )}
               label="HomePage"
               onPress={() => {
                 props.navigation.navigate('HomePage');
               }}
             />
             <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="account-outline" color={color} size={size} />
-              )}
+              // icon={({ color, size }) => (
+              //   <Icon name="account-outline" color={color} size={size} />
+              // )}
               label="HobbyList"
               onPress={() => {
                 props.navigation.navigate('HobbyList');
               }}
             />
             <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="bookmark-outline" color={color} size={size} />
-              )}
+              // icon={({ color, size }) => (
+              //   <Icon name="bookmark-outline" color={color} size={size} />
+              // )}
               label="ReviewPage"
               onPress={() => {
                 props.navigation.navigate('ReviewPage');
               }}
             />
             <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="settings-outline" color={color} size={size} />
-              )}
+              // icon={({ color, size }) => (
+              //   <Icon name="settings-outline" color={color} size={size} />
+              // )}
               label="TalkPage"
               onPress={() => {
                 props.navigation.navigate('TalkPage');
@@ -110,9 +101,9 @@ export const DrawerContent = (props) => {
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
-          icon={({ color, size }) => (
-            <Icon name="exit-to-app" color={color} size={size} />
-          )}
+          // icon={({ color, size }) => (
+          //   <Icon name="exit-to-app" color={color} size={size} />
+          // )}
           label="Sign Out"
           onPress={onUserLogOut}
         />

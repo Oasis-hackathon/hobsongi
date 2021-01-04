@@ -21,10 +21,10 @@ const MainDrawerNav = ({ user }) => {
         itemStyle: { backgroundColor: 'gray', borderRadius: 40, height: 60 },
       }}
       drawerContent={(props) => <DrawerContent {...props} user={user} />}>
-      <Drawer.Screen name="HomePage" component={HomePage} user={user} />
-      {/* <Drawer.Screen name="HomePage">
+      {/* <Drawer.Screen name="HomePage" component={HomePage} /> */}
+      <Drawer.Screen name="HomePage">
         {(props) => <HomePage {...props} user={user} />}
-      </Drawer.Screen> */}
+      </Drawer.Screen>
       <Drawer.Screen name="HobbyList" component={HobbyList} />
       <Drawer.Screen name="ReviewPage" component={ReviewPage} />
       <Drawer.Screen name="TalkPage" component={TalkPage} />

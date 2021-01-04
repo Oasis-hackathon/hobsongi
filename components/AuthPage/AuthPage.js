@@ -76,6 +76,31 @@ const AuthPage = () => {
         name: userCredentials.user._auth._user.displayName,
         image: userCredentials.user._auth._user.photoURL,
       });
+      //////////////// realtime database에 넣기
+      // database().ref('hobby').child('보석 십자수').set({
+      //   description:
+      //     '실로 수를 놓는 일반 십자수와는 달리 보석으로 수를 놓는 십자수 방식으로 집중력 향상에 도움을 준다.',
+      //   link:
+      //     'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMTlfMTQ0%2FMDAxNjA4MzE4OTgyMTU5.9bp0So87bJY2VuzopGHKgLEK6au9WKwEWPKu8esjSr4g.wYXK7daUz0FMAWiGQfF-T56LnqDE5HtIM5njREK4-MAg.JPEG.monica0133%2F20201219_041543.jpg&type=sc960_832',
+      //   image:
+      //     'https://search.shopping.naver.com/search/all?where=all&frm=NVSCTAB&query=%EB%B3%B4%EC%84%9D%EC%8B%AD%EC%9E%90%EC%88%98',
+      // });
+      // database().ref('hobby').child('미니어처').set({
+      //   description:
+      //     '사물을 실제보다 작은 크기로 만드는 것을 뜻하며 음식, 하우스, 오르골 등 다양한 종류의 미니어처 만들기가 있다. 모형의 크기가 작아 섬세함이 필요한 취미 중 하나이다.',
+      //   link:
+      //     'https://search.shopping.naver.com/search/all?query=%EB%AF%B8%EB%8B%88%EC%96%B4%EC%B2%98&cat_id=&frm=NVSHATC',
+      //   image:
+      //     'https://smartstore.naver.com/allaboutkit/category/6fee59b4a81d43f88f3efc35ef56aacc?cp=1',
+      // });
+      // database().ref('hobby').child('프랑스 자수').set({
+      //   description:
+      //     '십자수와 비슷한 수예의 일종으로 다양한 스티치법을 이용해 모양을 만들어 수를 놓는 취미이다.',
+      //   link: 'https://www.fashionmade.co.kr/',
+      //   image:
+      //     'https://search.naver.com/search.naver?where=image&sm=tab_jum&query=%ED%94%84%EB%9E%91%EC%8A%A4%EC%9E%90%EC%88%98',
+      // });
+      //////////////////
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         Alert.alert('에러', '이미 존재하는 이메일입니다.', [
