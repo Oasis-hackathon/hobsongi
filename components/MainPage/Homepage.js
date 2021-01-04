@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import MyCarousel from './MyCarousel';
+import { DrawerActions } from '@react-navigation/native';
 
 const wait = (timeout) => {
   return new Promise((resolve) => {
@@ -15,14 +16,17 @@ const wait = (timeout) => {
   });
 };
 
-const HomePage = ({ user }) => {
+const HomePage = ({ user, navigation }) => {
   const [refreshing, setRefreshing] = React.useState(false);
-  const a = ['십자수', '뜨게질', '목도리', '귀토시'];
+
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
 
     wait(2000).then(() => setRefreshing(false));
   }, []);
+
+  const jumpToAction = DrawerActions.jumpTo('WebViewPage');
+
   return (
     <>
       <View
@@ -67,7 +71,7 @@ const HomePage = ({ user }) => {
             }}>
             <TouchableOpacity
               style={{ width: 40, height: 40, backgroundColor: 'black' }}
-              // onPress={ }
+              onPress={() => navigation.dispatch(jumpToAction)}
             />
           </View>
         </View>

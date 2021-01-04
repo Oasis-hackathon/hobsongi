@@ -1,8 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState, useEffect } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import AuthPage from './AuthPage/AuthPage';
+import AuthPage from '../AuthPage/AuthPage';
 import MainDrawerNav from './MainDrawerNav';
+
 import auth from '@react-native-firebase/auth';
 
 const PageRouter = () => {
