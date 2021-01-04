@@ -44,8 +44,8 @@ const HomePage = ({ user, navigation }) => {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
-        <View style={{ borderWidth: 1, flexDirection: 'row' }}>
-          <View style={{ flex: 0.5, alignItems: 'center', borderWidth: 1 }}>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ flex: 0.5, alignItems: 'center' }}>
             <Text style={{ fontSize: 20 }}>
               {user && user._auth._user.displayName}님,
             </Text>

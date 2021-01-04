@@ -4,7 +4,6 @@ import { View, Text, Dimensions } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 const webViewWidth = Dimensions.get('window').width;
-console.log(webViewWidth);
 
 const HobbyList = () => {
   return (

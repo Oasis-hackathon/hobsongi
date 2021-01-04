@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
-import { Text, View, SafeAreaView } from 'react-native';
+import { Text, View, SafeAreaView, Image } from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
 
@@ -40,12 +40,17 @@ export default class MyCarousel extends React.Component {
         style={{
           backgroundColor: 'floralwhite',
           borderRadius: 5,
-          height: 200,
-          padding: 50,
+          height: 150,
           marginLeft: 15,
           marginRight: 15,
         }}>
-        <Text style={{ fontSize: 30 }}>{item.title}</Text>
+        <Image
+          source={{
+            uri:
+              'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMjNfNDMg%2FMDAxNjA2MTA3NjgwNTY3.0dmh36Ntn8CxUOukg-ydWw6QBl6ElAkYGuBlCQFkSj8g.u2jVHORHxO-AeuXTL66M6AP85bF2OaWhPuGpR8rGFbkg.JPEG.fhzkxms%2FKakaoTalk_20201123_140002812.jpg&type=sc960_832',
+          }}
+          style={{ width: 170, height: 130, borderRadius: 5,}}
+        />
         <Text>{item.text}</Text>
       </View>
     );
@@ -55,9 +60,10 @@ export default class MyCarousel extends React.Component {
     return (
       <SafeAreaView
         style={{
-          height: 300,
-          backgroundColor: 'rebeccapurple',
-          paddingTop: 50,
+          height: 329,
+          backgroundColor: '#f0f0f0',
+          marginTop: 40,
+          paddingTop: 30,
         }}>
         <View
           style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
@@ -65,7 +71,7 @@ export default class MyCarousel extends React.Component {
             layout={'default'}
             ref={(ref) => (this.carousel = ref)}
             data={this.state.carouselItems}
-            sliderWidth={300}
+            sliderWidth={350}
             itemWidth={200}
             renderItem={this._renderItem}
             onSnapToItem={(index) => this.setState({ activeIndex: index })}

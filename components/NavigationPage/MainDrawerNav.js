@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import HomePage from '../MainPage/HomePage';
-import HobbyList from '../MainPage/HobbyList';
-import ReviewPage from '../MainPage/ReviewPage';
-import TalkPage from '../MainPage/TalkPage';
+import HobbyListPage from '../MainPage/HobbyListPage';
+import HobbySharePage from '../MainPage/HobbySharePage';
+import MyPage from '../MainPage/MyPage';
 import WebViewPage from '../WebViewPage/WebViewPage';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { DrawerContent } from './DrawerContent';
@@ -25,12 +25,12 @@ const MainDrawerNav = ({ user }) => {
       <Drawer.Screen name="HomePage">
         {(props) => <HomePage {...props} user={user} />}
       </Drawer.Screen>
-      <Drawer.Screen name="HobbyList">
-        {(props) => <HobbyList {...props} />}
+      <Drawer.Screen name="HobbyListPage">
+        {(props) => <HobbyListPage {...props} />}
       </Drawer.Screen>
       {/* <Drawer.Screen name="HobbyList" component={HobbyList} /> */}
-      <Drawer.Screen name="ReviewPage" component={ReviewPage} />
-      <Drawer.Screen name="TalkPage" component={TalkPage} />
+      <Drawer.Screen name="HobbySharePage" component={HobbySharePage} />
+      <Drawer.Screen name="MyPage" component={MyPage} />
       <Drawer.Screen name="WebViewPage" component={WebViewPage} />
     </Drawer.Navigator>
   );

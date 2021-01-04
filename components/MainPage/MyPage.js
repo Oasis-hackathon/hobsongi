@@ -2,12 +2,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const HobbyList = () => {
+const MyPage = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>HobbyList</Text>
+      <Text>MyPage</Text>
     </View>
   );
 };
 
-export default HobbyList;
+export default MyPage;

@@ -32,6 +32,7 @@ export const DrawerContent = (props) => {
                   uri: props.user && props.user._auth._user.photoURL,
                 }}
                 size={50}
+                style={{ marginTop: 5 }}
               />
               <View style={{ marginLeft: 15, flexDirection: 'column' }}>
                 <Title style={styles.title}>
@@ -45,16 +46,11 @@ export const DrawerContent = (props) => {
 
             <View style={styles.row}>
               <View style={styles.section}>
+                <Caption style={styles.caption}>내가 관심있는 취미</Caption>
                 <Paragraph style={[styles.paragraph, styles.caption]}>
-                  80
+                  {' '}
+                  4개
                 </Paragraph>
-                <Caption style={styles.caption}>Following</Caption>
-              </View>
-              <View style={styles.section}>
-                <Paragraph style={[styles.paragraph, styles.caption]}>
-                  100
-                </Paragraph>
-                <Caption style={styles.caption}>Followers</Caption>
               </View>
             </View>
           </View>
@@ -64,7 +60,7 @@ export const DrawerContent = (props) => {
               // icon={({ color, size }) => (
               //   <Icon name="home-outline" color={color} size={size} />
               // )}
-              label="HomePage"
+              label="홈으로"
               onPress={() => {
                 props.navigation.navigate('HomePage');
               }}
@@ -73,27 +69,27 @@ export const DrawerContent = (props) => {
               // icon={({ color, size }) => (
               //   <Icon name="account-outline" color={color} size={size} />
               // )}
-              label="HobbyList"
+              label="취미목록"
               onPress={() => {
-                props.navigation.navigate('HobbyList');
+                props.navigation.navigate('HobbyListPage');
               }}
             />
             <DrawerItem
               // icon={({ color, size }) => (
               //   <Icon name="bookmark-outline" color={color} size={size} />
               // )}
-              label="ReviewPage"
+              label="취미공유"
               onPress={() => {
-                props.navigation.navigate('ReviewPage');
+                props.navigation.navigate('HobbySharePage');
               }}
             />
             <DrawerItem
               // icon={({ color, size }) => (
               //   <Icon name="settings-outline" color={color} size={size} />
               // )}
-              label="TalkPage"
+              label="마이페이지"
               onPress={() => {
-                props.navigation.navigate('TalkPage');
+                props.navigation.navigate('MyPage');
               }}
             />
           </Drawer.Section>
