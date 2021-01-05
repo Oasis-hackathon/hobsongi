@@ -8,23 +8,13 @@ const HobbySharePage = ({ user }) => {
   console.log(user);
   return (
     <>
-      <View
-        style={{
-          borderWidth: 1,
-          width: '100%',
-          height: 60,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text style={{ fontSize: 25 }}>당신을 위한 추천</Text>
-      </View>
       <ScrollView>
-        <View style={{ flex: 1, height: Height + 100 }}>
+        <View style={{ flex: 1, height: Height * 3 + 300 }}>
           <View
             style={{
               height: 350,
               padding: 25,
-              backgroundColor: 'white',
+              backgroundColor: '#D0E8F2',
               elevation: 4,
             }}>
             <View
@@ -77,7 +67,7 @@ const HobbySharePage = ({ user }) => {
             style={{
               height: 350,
               padding: 25,
-              backgroundColor: 'white',
+              backgroundColor: '#D0E8F2',
               elevation: 4,
             }}>
             <View
@@ -121,6 +111,216 @@ const HobbySharePage = ({ user }) => {
             </View>
             <Text style={{ color: 'gray' }}>
               #테라리움 만들기 #원예활동 #같이취미해요
+            </Text>
+          </View>
+
+          <View style={{ marginBottom: 20 }} />
+
+          <View
+            style={{
+              height: 350,
+              padding: 25,
+              backgroundColor: '#D0E8F2',
+              elevation: 4,
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginBottom: 15,
+              }}>
+              <Image
+                source={{
+                  uri:
+                    'http://gravatar.com/avatar/822dfd2681e0c4e1f0d0332d8c982ec2?d=identicon',
+                }}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 25,
+                  marginRight: 10,
+                }}
+              />
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={{ fontSize: 16 }}>코로나싫어</Text>
+                <Text style={{ color: 'gray' }}>@fkssf12@naver.com</Text>
+              </View>
+            </View>
+            <Image
+              source={{
+                uri:
+                  'https://img1.tmon.kr/cdn3/deals/2019/04/20/1804576738/front_d7ff6_sdd7g.jpg',
+              }}
+              style={{
+                width: 300,
+                height: 200,
+                borderRadius: 15,
+                marginBottom: 5,
+              }}
+            />
+            <View style={{ flexDirection: 'row' }}>
+              <Icon name="heart-outline" size={25} style={{ opacity: 0.5 }} />
+              <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
+            </View>
+            <Text style={{ color: 'gray' }}>
+              #테라리움 #새로운 취미 #초록정원
+            </Text>
+          </View>
+
+          <View style={{ marginBottom: 20 }} />
+
+          <View
+            style={{
+              height: 350,
+              padding: 25,
+              backgroundColor: '#D0E8F2',
+              elevation: 4,
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginBottom: 15,
+              }}>
+              <Image
+                source={{
+                  uri:
+                    'http://gravatar.com/avatar/87184013f6b23340df0d7c97ff554e32?d=identicon',
+                }}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 25,
+                  marginRight: 10,
+                }}
+              />
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={{ fontSize: 16 }}>코딩좋아</Text>
+                <Text style={{ color: 'gray' }}>@tsff231@naver.com</Text>
+              </View>
+            </View>
+            <Image
+              source={{
+                uri:
+                  'https://www.aesdes.org/wp-content/uploads/2020/03/Capture.jpg',
+              }}
+              style={{
+                width: 300,
+                height: 200,
+                borderRadius: 15,
+                marginBottom: 5,
+              }}
+            />
+            <View style={{ flexDirection: 'row' }}>
+              <Icon name="heart" size={25} style={{ opacity: 0.5 }} />
+              <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
+            </View>
+            <Text style={{ color: 'gray' }}>#레진아트 #영롱 #예쁨</Text>
+          </View>
+
+          <View style={{ marginBottom: 20 }} />
+
+          <View
+            style={{
+              height: 350,
+              padding: 25,
+              backgroundColor: '#D0E8F2',
+              elevation: 4,
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginBottom: 15,
+              }}>
+              <Image
+                source={{
+                  uri:
+                    'http://gravatar.com/avatar/cbe45ef10340675d31769ce59fb025e8?d=identicon',
+                }}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 25,
+                  marginRight: 10,
+                }}
+              />
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={{ fontSize: 16 }}>홉송이가</Text>
+                <Text style={{ color: 'gray' }}>@hobsongi@naver.com</Text>
+              </View>
+            </View>
+            <Image
+              source={{
+                uri:
+                  'https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20200911_45%2F1599814070034RGtE7_JPEG%2FTB2MUH5dBcXBuNjt_biXXXpmpXa_3039962413.jpg&type=sc960_832',
+              }}
+              style={{
+                width: 300,
+                height: 200,
+                borderRadius: 15,
+                marginBottom: 5,
+              }}
+            />
+            <View style={{ flexDirection: 'row' }}>
+              <Icon name="heart" size={25} style={{ opacity: 0.5 }} />
+              <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
+            </View>
+            <Text style={{ color: 'gray' }}>
+              #페이퍼커팅 #칼조심 #무드등 #분위기
+            </Text>
+          </View>
+
+          <View style={{ marginBottom: 20 }} />
+
+          <View
+            style={{
+              height: 350,
+              padding: 25,
+              backgroundColor: '#D0E8F2',
+              elevation: 4,
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginBottom: 15,
+              }}>
+              <Image
+                source={{
+                  uri:
+                    'http://gravatar.com/avatar/ae4a6e7394d15692395136661c0c32b5?d=identicon',
+                }}
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 25,
+                  marginRight: 10,
+                }}
+              />
+              <View style={{ flexDirection: 'column' }}>
+                <Text style={{ fontSize: 16 }}>김아무개12</Text>
+                <Text style={{ color: 'gray' }}>@toss122@naver.com</Text>
+              </View>
+            </View>
+            <Image
+              source={{
+                uri:
+                  'https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2F736x%2F2d%2Fae%2F83%2F2dae83958e6331e0b87296908fed4331--tree-trunks-fairies-garden.jpg&type=sc960_832',
+              }}
+              style={{
+                width: 300,
+                height: 200,
+                borderRadius: 15,
+                marginBottom: 5,
+              }}
+            />
+            <View style={{ flexDirection: 'row' }}>
+              <Icon name="heart" size={25} style={{ opacity: 0.5 }} />
+              <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
+            </View>
+            <Text style={{ color: 'gray' }}>
+              #미니어처 #DIY #숲속의집 #난이도높음 #미니조명 #인테리어
             </Text>
           </View>
         </View>

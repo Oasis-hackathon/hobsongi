@@ -70,14 +70,21 @@ const HobbyListPage = ({ hobby, navigation }) => {
     <>
       <View
         style={{
-          borderWidth: 1,
           width: '100%',
           height: 60,
           justifyContent: 'center',
           alignItems: 'center',
+          backgroundColor: '#D0E8F2',
         }}>
-        <Text style={{ fontSize: 25 }}>당신을 위한 추천</Text>
+        <Text style={{ fontSize: 25, fontWeight: '500' }}>당신을 위한 추천</Text>
       </View>
+      <View
+        style={{
+          borderBottomWidth: 1,
+          borderBottomColor: 'gray',
+          opacity: 0.3,
+        }}
+      />
       <ScrollView
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />

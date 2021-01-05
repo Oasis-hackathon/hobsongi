@@ -100,7 +100,7 @@ const AuthPage = () => {
   }
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: '#e6ffff' }}>
+    <ScrollView style={{ flex: 1, backgroundColor: '#D0E8F2' }}>
       <View
         style={{
           alignItems: 'center',
@@ -138,8 +138,8 @@ const AuthPage = () => {
             borderRadius: 30,
             padding: 5,
           }}
-          backgroundColorOn="#fff0e6"
-          backgroundColorOff="#cce5ff"
+          backgroundColorOn="#BDBAB0"
+          backgroundColorOff="#BDBAB0"
           circleStyle={{
             width: 120,
             height: 40,
@@ -149,8 +149,8 @@ const AuthPage = () => {
           }}
           switchOn={switchOn}
           onPress={() => setSwitchOn(!switchOn)}
-          circleColorOff="#e6ffe6"
-          circleColorOn="#e5e1e0"
+          circleColorOff="#FCF8EC"
+          circleColorOn="#FCF8EC"
           duration={500}
         />
 
@@ -259,7 +259,7 @@ const AuthPage = () => {
             width: 120,
             height: 50,
             borderRadius: 25,
-            backgroundColor: '#ffffe6',
+            backgroundColor: '#FCF8EC',
             elevation: 5,
           }}
           onPress={switchOn ? onCreateUser : onLoginUser}>

@@ -105,15 +105,16 @@ const MyCarousel = ({ hobby, randomNumber }) => {
           parallaxFactor={0.4}
           {...parallaxProps}
         />
-        <Text style={styles.title} numberOfLines={2}>
+        {/* <Text style={styles.title} numberOfLines={2}>
           {item.title}
-        </Text>
+        </Text> */}
       </View>
     );
   };
 
   return (
     <View style={styles.container}>
+      <View style={{ marginBottom: 20 }} />
       <Carousel
         ref={carouselRef}
         sliderWidth={screenWidth}
@@ -134,10 +135,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: 20,
+    paddingBottom: 20,
   },
   item: {
     width: screenWidth - 60,
-    height: screenWidth - 60,
+    height: screenWidth - 90,
   },
   imageContainer: {
     flex: 1,
@@ -151,7 +153,8 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 20,
     fontSize: 20,
+    color: 'white',
   },
 });
