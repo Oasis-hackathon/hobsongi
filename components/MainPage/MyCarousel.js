@@ -1,13 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
-import {
-  View,
-  Text,
-  Dimensions,
-  StyleSheet,
-  TouchableOpacity,
-  Platform,
-} from 'react-native';
+import { View, Text, Dimensions, StyleSheet, Platform } from 'react-native';
 
 const { width: screenWidth } = Dimensions.get('window');
 
@@ -18,7 +11,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
       illustration: hobby[randomNumber].image[0],
     },
     {
-      title: `집에서 특별한 취미 어떠세요?`,
+      title: '집에서 특별한 취미 어때요?',
       illustration: hobby[randomNumber].image[1],
     },
     {
@@ -26,7 +19,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
       illustration: hobby[randomNumber].image[2],
     },
     {
-      title: `집에서 특별한 취미 어떠세요?`,
+      title: '집에서 특별한 취미 어때요?',
       illustration: hobby[randomNumber].image[3],
     },
     {
@@ -34,7 +27,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
       illustration: hobby[randomNumber].image[4],
     },
     {
-      title: hobby[randomNumber].name,
+      title: '이런 취미는 어때요?',
       illustration: hobby[randomNumber].image[5],
     },
     {
@@ -42,7 +35,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
       illustration: hobby[randomNumber].image[6],
     },
     {
-      title: hobby[randomNumber].name,
+      title: '이런 취미는 어때요?',
       illustration: hobby[randomNumber].image[7],
     },
     {
@@ -64,7 +57,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
         illustration: hobby[randomNumber].image[0],
       },
       {
-        title: `집에서 특별한 취미 어떠세요?`,
+        title: '집에서 특별한 취미 어때요?',
         illustration: hobby[randomNumber].image[1],
       },
       {
@@ -72,7 +65,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
         illustration: hobby[randomNumber].image[2],
       },
       {
-        title: `집에서 특별한 취미 어떠세요?`,
+        title: '집에서 특별한 취미 어때요?',
         illustration: hobby[randomNumber].image[3],
       },
       {
@@ -80,7 +73,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
         illustration: hobby[randomNumber].image[4],
       },
       {
-        title: hobby[randomNumber].name,
+        title: '이런 취미는 어때요?',
         illustration: hobby[randomNumber].image[5],
       },
       {
@@ -88,7 +81,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
         illustration: hobby[randomNumber].image[6],
       },
       {
-        title: hobby[randomNumber].name,
+        title: '이런 취미는 어때요?',
         illustration: hobby[randomNumber].image[7],
       },
       {

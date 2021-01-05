@@ -6,7 +6,7 @@ import HobbyListPage from '../MainPage/HobbyListPage';
 import HobbySharePage from '../MainPage/HobbySharePage';
 import MyPage from '../MainPage/MyPage';
 import WebViewPage from '../WebViewPage/WebViewPage';
-import WebViewOnlyLinkPage from '../WebViewPage/WebViewOnlyLinkPage'
+import WebViewOnlyLinkPage from '../WebViewPage/WebViewOnlyLinkPage';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { DrawerContent } from './DrawerContent';
 
@@ -392,7 +392,9 @@ const MainDrawerNav = ({ user }) => {
           <HobbyListPage {...props} hobby={hobby} randomNumber={randomNumber} />
         )}
       </Drawer.Screen>
-      <Drawer.Screen name="HobbySharePage" component={HobbySharePage} />
+      <Drawer.Screen name="HobbySharePage">
+        {(props) => <HobbySharePage {...props} user={user} />}
+      </Drawer.Screen>
       <Drawer.Screen name="MyPage" component={MyPage} />
       <Drawer.Screen name="WebViewPage" component={WebViewPage} />
       <Drawer.Screen

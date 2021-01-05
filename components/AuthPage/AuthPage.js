@@ -95,9 +95,9 @@ const AuthPage = () => {
       }
     }
   };
-  // if (!isLoading) {
-  //   return <SplashPage />;
-  // }
+  if (!isLoading) {
+    return <SplashPage />;
+  }
 
   return (
     <ScrollView style={{ flex: 1, backgroundColor: '#e6ffff' }}>
