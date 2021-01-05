@@ -1,82 +1,118 @@
-/* eslint-disable react-native/no-inline-styles */
-import * as React from 'react';
-import { Text, View, SafeAreaView, Image } from 'react-native';
+import React, { useRef, useState, useEffect } from 'react';
+import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+import {
+  View,
+  Text,
+  Dimensions,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 
-import Carousel from 'react-native-snap-carousel';
+const { width: screenWidth } = Dimensions.get('window');
 
-export default class MyCarousel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeIndex: 0,
-      carouselItems: [
-        {
-          img: this.props.hobby[this.props.randomNumber].image[0],
-          text: this.props.hobby[this.props.randomNumber].name,
-        },
-        {
-          img: this.props.hobby[this.props.randomNumber].image[1],
-          text: this.props.hobby[this.props.randomNumber].name,
-        },
-        {
-          img: this.props.hobby[this.props.randomNumber].image[2],
-          text: this.props.hobby[this.props.randomNumber].name,
-        },
-        {
-          img: this.props.hobby[this.props.randomNumber].image[3],
-          text: this.props.hobby[this.props.randomNumber].name,
-        },
-        {
-          img: this.props.hobby[this.props.randomNumber].image[4],
-          text: this.props.hobby[this.props.randomNumber].name,
-        },
-      ],
-    };
-  }
+const MyCarousel = ({ hobby, randomNumber }) => {
+  const [entries, setEntries] = useState([
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[0],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[1],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[2],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[3],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[4],
+    },
+  ]);
 
-  _renderItem({ item }) {
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    setEntries([
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[0],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[1],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[2],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[3],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[4],
+      },
+    ]);
+  }, [randomNumber, hobby]);
+
+  const renderItem = ({ item, index }, parallaxProps) => {
     return (
-      <View
-        style={{
-          backgroundColor: 'floralwhite',
-          borderRadius: 5,
-          height: 150,
-          marginLeft: 15,
-          marginRight: 15,
-        }}>
-        <Image
-          source={{
-            uri: item.img,
-          }}
-          style={{ width: 170, height: 130, borderRadius: 5 }}
+      <View style={styles.item}>
+        <ParallaxImage
+          source={{ uri: item.illustration }}
+          containerStyle={styles.imageContainer}
+          style={styles.image}
+          parallaxFactor={0.4}
+          {...parallaxProps}
         />
-        <Text>{item.text}</Text>
+        <Text style={styles.title} numberOfLines={2}>
+          {item.title}
+        </Text>
       </View>
     );
-  }
+  };
 
-  render() {
-    return (
-      <SafeAreaView
-        style={{
-          height: 329,
-          backgroundColor: '#f0f0f0',
-          marginTop: 40,
-          paddingTop: 30,
-        }}>
-        <View
-          style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
-          <Carousel
-            layout={'default'}
-            ref={(ref) => (this.carousel = ref)}
-            data={this.state.carouselItems}
-            sliderWidth={350}
-            itemWidth={200}
-            renderItem={this._renderItem}
-            onSnapToItem={(index) => this.setState({ activeIndex: index })}
-          />
-        </View>
-      </SafeAreaView>
-    );
-  }
-}
+  return (
+    <View style={styles.container}>
+      <Carousel
+        ref={carouselRef}
+        sliderWidth={screenWidth}
+        sliderHeight={screenWidth}
+        itemWidth={screenWidth - 60}
+        data={entries}
+        renderItem={renderItem}
+        hasParallaxImages={true}
+        autoplay
+      />
+    </View>
+  );
+};
+
+export default MyCarousel;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  item: {
+    width: screenWidth - 60,
+    height: screenWidth - 60,
+  },
+  imageContainer: {
+    flex: 1,
+    marginBottom: Platform.select({ ios: 0, android: 1 }),
+    backgroundColor: 'white',
+    borderRadius: 8,
+  },
+  image: {
+    ...StyleSheet.absoluteFillObject,
+    resizeMode: 'cover',
+  },
+});

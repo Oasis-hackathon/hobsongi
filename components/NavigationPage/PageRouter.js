@@ -34,7 +34,7 @@ const PageRouter = () => {
         </Stack.Screen>
       ) : (
         <Stack.Screen name="MainDrawerNav">
-          {(props) => <MainDrawerNav {...props} user={user} />}
+          {(props) => <MainDrawerNav {...props} user={user}/>}
         </Stack.Screen>
       )}
     </Stack.Navigator>

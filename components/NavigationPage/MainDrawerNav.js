@@ -10,7 +10,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { DrawerContent } from './DrawerContent';
 
 const MainDrawerNav = ({ user }) => {
-  const [hobby, setHobby] = useState([
+  const [hobby] = useState([
     {
       name: '보석십자수',
       description:
@@ -358,14 +358,16 @@ const MainDrawerNav = ({ user }) => {
   ]);
   const Drawer = createDrawerNavigator();
   const drawerWidth = Dimensions.get('window').width;
+  const [randomNumberArray] = useState([]);
+  const [randomNumber, setRandomNumber] = useState(0);
 
-  let randomNumberArray = [];
-  for (let i = 0; i < hobby.length; i++) {
-    randomNumberArray.push(i);
-  }
-  let randomNumber = Math.floor(Math.random(randomNumberArray) * hobby.length);
-  console.log(randomNumber);
-  
+  useEffect(() => {
+    for (let i = 0; i < hobby.length; i++) {
+      randomNumberArray.push(i);
+    }
+    setRandomNumber(Math.floor(Math.random(randomNumberArray) * hobby.length));
+  }, [hobby, randomNumberArray]);
+
   return (
     <Drawer.Navigator
       drawerStyle={{
@@ -379,6 +381,8 @@ const MainDrawerNav = ({ user }) => {
             user={user}
             hobby={hobby}
             randomNumber={randomNumber}
+            randomNumberArray={randomNumberArray}
+            setRandomNumber={setRandomNumber}
           />
         )}
       </Drawer.Screen>

@@ -16,32 +16,33 @@ const wait = (timeout) => {
   });
 };
 
-const HomePage = ({ user, navigation, hobby, randomNumber }) => {
+const HomePage = ({
+  user,
+  navigation,
+  hobby,
+  randomNumber,
+  randomNumberArray,
+  setRandomNumber,
+}) => {
   const [refreshing, setRefreshing] = useState(false);
 
-  // randomNumberArray.splice(randomNumber, 1);
-  // console.log(randomNumberArray);
-
-  // const showRandomHobby = () => {
-  //   if (randomNumberArray.length === 0) {
-  //     for (let i = 0; i < hobby.length; i++) {
-  //       randomNumberArray.push(i);
-  //     }
-  //   }
-  //   randomNumber = Math.floor(Math.random(randomNumberArray) * hobby.length);
-  //   randomNumberArray.splice(randomNumber, 1);
-  //   console.log(randomNumberArray);
-  // };
+  const generateRandomHobby = useCallback(() => {
+    setRandomNumber(Math.floor(Math.random(randomNumberArray) * hobby.length));
+  }, [hobby, randomNumberArray, setRandomNumber]);
 
   const onRefresh = useCallback(() => {
     setRefreshing(true);
 
     wait(2000).then(() => {
       setRefreshing(false);
+      generateRandomHobby();
     });
-  }, []);
+  }, [generateRandomHobby]);
 
-  const jumpToAction = DrawerActions.jumpTo('WebViewPage');
+  const jumpToAction = DrawerActions.jumpTo('WebViewPage', {
+    hobby,
+    randomNumber,
+  });
   return (
     <>
       <View
