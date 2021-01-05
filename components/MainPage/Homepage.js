@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import MyCarousel from './MyCarousel';
 import { DrawerActions } from '@react-navigation/native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const wait = (timeout) => {
   return new Promise((resolve) => {
@@ -89,10 +90,9 @@ const HomePage = ({
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <TouchableOpacity
-              style={{ width: 40, height: 40, backgroundColor: 'black' }}
-              onPress={() => navigation.dispatch(jumpToAction)}
-            />
+            <TouchableOpacity onPress={() => navigation.dispatch(jumpToAction)}>
+              <Icon name="cart-minus" size={40} style={{ opacity: 0.5 }} />
+            </TouchableOpacity>
           </View>
         </View>
         <MyCarousel hobby={hobby} randomNumber={randomNumber} />

@@ -7,7 +7,10 @@ import {
   ScrollView,
   Image,
   RefreshControl,
+  TouchableOpacity,
 } from 'react-native';
+import ModalPage from './ModalPage';
+import { DrawerActions } from '@react-navigation/native';
 
 const wait = (timeout) => {
   return new Promise((resolve) => {
@@ -15,11 +18,13 @@ const wait = (timeout) => {
   });
 };
 
-const HobbyListPage = ({ hobby }) => {
+const HobbyListPage = ({ hobby, navigation }) => {
   const HobbyListHeight = Dimensions.get('window').height * 1.5;
   const [refreshing, setRefreshing] = useState(false);
   const [randomNumberArray, setRandomNumberArray] = useState([]);
   const [randomNumberFromOneToTen, setRandomNumberFromOneToTen] = useState([]);
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [hobbyInfo, setHobbyInfo] = useState([]);
 
   for (let i = 0; i < hobby.length; i++) {
     randomNumberArray.push(i);
@@ -44,17 +49,22 @@ const HobbyListPage = ({ hobby }) => {
       setRandomNumberArray(shuffleArray(randomNumberArray));
       setRandomNumberFromOneToTen(shuffleArray(randomNumberFromOneToTen));
     });
-  }, []);
+  }, [
+    setRandomNumberArray,
+    setRandomNumberFromOneToTen,
+    randomNumberArray,
+    randomNumberFromOneToTen,
+  ]);
 
   useEffect(() => {
     setRandomNumberArray(shuffleArray(randomNumberArray));
     setRandomNumberFromOneToTen(shuffleArray(randomNumberFromOneToTen));
   }, []);
 
-  // useEffect(() => {
-  //   setRandomNumberArray(shuffleArray(randomNumberArray));
-  //   setRandomNumberFromOneToTen(shuffleArray(randomNumberFromOneToTen));
-  // }, [randomNumberArray, randomNumberFromOneToTen]);
+  useEffect(() => {
+    setRandomNumberArray(shuffleArray(randomNumberArray));
+    setRandomNumberFromOneToTen(shuffleArray(randomNumberFromOneToTen));
+  }, [randomNumberArray, randomNumberFromOneToTen]);
 
   return (
     <>
@@ -78,37 +88,67 @@ const HobbyListPage = ({ hobby }) => {
             flexDirection: 'row',
           }}>
           <View style={{ flex: 0.47, flexDirection: 'column' }}>
-            <Image
-              source={{
-                uri:
-                  hobby &&
-                  hobby[randomNumberArray[0]].image[
-                    randomNumberFromOneToTen[0]
-                  ],
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[0]]);
+                setModalVisible(!isModalVisible);
               }}
-              style={{ flex: 0.3, borderWidth: 0.5, borderColor: '#f0f0f0' }}
-            />
-            <Image
-              source={{
-                uri:
-                  hobby &&
-                  hobby[randomNumberArray[1]].image[
-                    randomNumberFromOneToTen[1]
-                  ],
+              style={{ flex: 0.3, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
+              <Image
+                source={{
+                  uri:
+                    hobby &&
+                    hobby[randomNumberArray[0]].image[
+                      randomNumberFromOneToTen[0]
+                    ],
+                }}
+                style={{ flex: 1 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[1]]);
+                setModalVisible(!isModalVisible);
               }}
-              style={{ flex: 0.25, borderWidth: 0.5, borderColor: '#f0f0f0' }}
-            />
-            <Image
-              source={{
-                uri:
-                  hobby &&
-                  hobby[randomNumberArray[2]].image[
-                    randomNumberFromOneToTen[2]
-                  ],
+              style={{ flex: 0.2, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
+              <Image
+                source={{
+                  uri:
+                    hobby &&
+                    hobby[randomNumberArray[1]].image[
+                      randomNumberFromOneToTen[1]
+                    ],
+                }}
+                style={{ flex: 1 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[2]]);
+                setModalVisible(!isModalVisible);
               }}
-              style={{ flex: 0.3, borderWidth: 0.5, borderColor: '#f0f0f0' }}
-            />
-            <View style={{ flex: 0.4 }}>
+              style={{ flex: 0.3, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
+              <Image
+                source={{
+                  uri:
+                    hobby &&
+                    hobby[randomNumberArray[2]].image[
+                      randomNumberFromOneToTen[2]
+                    ],
+                }}
+                style={{ flex: 1 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[3]]);
+                setModalVisible(!isModalVisible);
+              }}
+              style={{ flex: 0.4, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
               <Image
                 source={{
                   uri:
@@ -119,42 +159,91 @@ const HobbyListPage = ({ hobby }) => {
                 }}
                 style={{ flex: 1 }}
               />
-            </View>
+            </TouchableOpacity>
           </View>
           <View style={{ flex: 0.53 }}>
-            <Image
-              source={{
-                uri:
-                  hobby &&
-                  hobby[randomNumberArray[4]].image[
-                    randomNumberFromOneToTen[4]
-                  ],
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[4]]);
+                setModalVisible(!isModalVisible);
               }}
-              style={{ flex: 0.4, borderWidth: 0.5, borderColor: '#f0f0f0' }}
-            />
-            <Image
-              source={{
-                uri:
-                  hobby &&
-                  hobby[randomNumberArray[5]].image[
-                    randomNumberFromOneToTen[5]
-                  ],
+              style={{ flex: 0.35, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
+              <Image
+                source={{
+                  uri:
+                    hobby &&
+                    hobby[randomNumberArray[4]].image[
+                      randomNumberFromOneToTen[4]
+                    ],
+                }}
+                style={{ flex: 1 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[5]]);
+                setModalVisible(!isModalVisible);
               }}
-              style={{ flex: 0.2, borderWidth: 0.5, borderColor: '#f0f0f0' }}
-            />
-            <Image
-              source={{
-                uri:
-                  hobby &&
-                  hobby[randomNumberArray[6]].image[
-                    randomNumberFromOneToTen[6]
-                  ],
+              style={{ flex: 0.25, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
+              <Image
+                source={{
+                  uri:
+                    hobby &&
+                    hobby[randomNumberArray[5]].image[
+                      randomNumberFromOneToTen[5]
+                    ],
+                }}
+                style={{ flex: 1 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[6]]);
+                setModalVisible(!isModalVisible);
               }}
-              style={{ flex: 0.4, borderWidth: 0.5, borderColor: '#f0f0f0' }}
-            />
+              style={{ flex: 0.2, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
+              <Image
+                source={{
+                  uri:
+                    hobby &&
+                    hobby[randomNumberArray[6]].image[
+                      randomNumberFromOneToTen[6]
+                    ],
+                }}
+                style={{ flex: 1 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                setHobbyInfo(hobby[randomNumberArray[7]]);
+                setModalVisible(!isModalVisible);
+              }}
+              style={{ flex: 0.2, borderWidth: 0.5, borderColor: '#f0f0f0' }}>
+              <Image
+                source={{
+                  uri:
+                    hobby &&
+                    hobby[randomNumberArray[7]].image[
+                      randomNumberFromOneToTen[7]
+                    ],
+                }}
+                style={{ flex: 1 }}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
+      <ModalPage
+        setModalVisible={setModalVisible}
+        isModalVisible={isModalVisible}
+        hobbyInfo={hobbyInfo}
+        DrawerActions={DrawerActions}
+        navigation={navigation}
+      />
     </>
   );
 };

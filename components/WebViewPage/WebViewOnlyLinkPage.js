@@ -5,9 +5,8 @@ import { WebView } from 'react-native-webview';
 
 const webViewWidth = Dimensions.get('window').width;
 
-const HobbyList = ({ route }) => {
-  const hobby = route.params.hobby;
-  const randomNumber = route.params.randomNumber;
+const WebViewOnlyLinkPage = ({ route }) => {
+  const hobbyInfo = route.params.hobbyInfo;
   return (
     <View
       style={{
@@ -18,7 +17,7 @@ const HobbyList = ({ route }) => {
       }}>
       <WebView
         source={{
-          uri: hobby[randomNumber].link,
+          uri: hobbyInfo.link,
         }}
         style={{ flex: 1, width: webViewWidth }}
         startInLoadingState
@@ -28,4 +27,4 @@ const HobbyList = ({ route }) => {
   );
 };
 
-export default HobbyList;
+export default WebViewOnlyLinkPage;
