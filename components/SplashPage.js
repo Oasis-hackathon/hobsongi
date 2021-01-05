@@ -11,9 +11,9 @@ const SplashPage = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#79A3B1',
+        backgroundColor: 'white',
       }}>
-      <Text style={{ fontSize: 43, color: 'white' }}>홉송이</Text>
+      <Text style={{ fontSize: 43, color: '#79A3B1' }}>홉송이</Text>
       <LottieView
         autoPlay
         style={{ height: 100, width: 100 }}

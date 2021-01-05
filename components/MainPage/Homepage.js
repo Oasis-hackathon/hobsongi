@@ -85,7 +85,6 @@ const HomePage = ({
               style={{
                 color: 'gray',
                 fontSize: 20,
-                paddingHorizontal: 10,
                 paddingVertical: 5,
                 borderRadius: 8,
                 fontWeight:'700'
