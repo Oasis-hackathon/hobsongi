@@ -11,24 +11,24 @@ export default class MyCarousel extends React.Component {
       activeIndex: 0,
       carouselItems: [
         {
-          title: 'Item 1',
-          text: 'Text 1',
+          img: this.props.hobby[this.props.randomNumber].image[0],
+          text: this.props.hobby[this.props.randomNumber].name,
         },
         {
-          title: 'Item 2',
-          text: 'Text 2',
+          img: this.props.hobby[this.props.randomNumber].image[1],
+          text: this.props.hobby[this.props.randomNumber].name,
         },
         {
-          title: 'Item 3',
-          text: 'Text 3',
+          img: this.props.hobby[this.props.randomNumber].image[2],
+          text: this.props.hobby[this.props.randomNumber].name,
         },
         {
-          title: 'Item 4',
-          text: 'Text 4',
+          img: this.props.hobby[this.props.randomNumber].image[3],
+          text: this.props.hobby[this.props.randomNumber].name,
         },
         {
-          title: 'Item 5',
-          text: 'Text 5',
+          img: this.props.hobby[this.props.randomNumber].image[4],
+          text: this.props.hobby[this.props.randomNumber].name,
         },
       ],
     };
@@ -46,10 +46,9 @@ export default class MyCarousel extends React.Component {
         }}>
         <Image
           source={{
-            uri:
-              'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMjNfNDMg%2FMDAxNjA2MTA3NjgwNTY3.0dmh36Ntn8CxUOukg-ydWw6QBl6ElAkYGuBlCQFkSj8g.u2jVHORHxO-AeuXTL66M6AP85bF2OaWhPuGpR8rGFbkg.JPEG.fhzkxms%2FKakaoTalk_20201123_140002812.jpg&type=sc960_832',
+            uri: item.img,
           }}
-          style={{ width: 170, height: 130, borderRadius: 5,}}
+          style={{ width: 170, height: 130, borderRadius: 5 }}
         />
         <Text>{item.text}</Text>
       </View>

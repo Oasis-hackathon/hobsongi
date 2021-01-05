@@ -77,7 +77,6 @@ const AuthPage = () => {
         image: userCredentials.user._auth._user.photoURL,
       });
       //////////////// realtime database에 넣기
-      
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         Alert.alert('에러', '이미 존재하는 이메일입니다.', [

@@ -5,7 +5,6 @@ import AuthPage from '../AuthPage/AuthPage';
 import MainDrawerNav from './MainDrawerNav';
 
 import auth from '@react-native-firebase/auth';
-import database from '@react-native-firebase/database';
 
 const PageRouter = () => {
   const Stack = createStackNavigator();
@@ -18,13 +17,6 @@ const PageRouter = () => {
       setInitializing(false);
     }
     console.log(user);
-
-    database()
-      .ref('hobby')
-      .once('value')
-      .then((snapshot) => {
-        console.log('hobby data: ', snapshot.val());
-      });
   };
 
   useEffect(() => {

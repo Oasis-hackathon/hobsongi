@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   View,
   Text,
@@ -16,17 +16,32 @@ const wait = (timeout) => {
   });
 };
 
-const HomePage = ({ user, navigation }) => {
-  const [refreshing, setRefreshing] = React.useState(false);
+const HomePage = ({ user, navigation, hobby, randomNumber }) => {
+  const [refreshing, setRefreshing] = useState(false);
 
-  const onRefresh = React.useCallback(() => {
+  // randomNumberArray.splice(randomNumber, 1);
+  // console.log(randomNumberArray);
+
+  // const showRandomHobby = () => {
+  //   if (randomNumberArray.length === 0) {
+  //     for (let i = 0; i < hobby.length; i++) {
+  //       randomNumberArray.push(i);
+  //     }
+  //   }
+  //   randomNumber = Math.floor(Math.random(randomNumberArray) * hobby.length);
+  //   randomNumberArray.splice(randomNumber, 1);
+  //   console.log(randomNumberArray);
+  // };
+
+  const onRefresh = useCallback(() => {
     setRefreshing(true);
 
-    wait(2000).then(() => setRefreshing(false));
+    wait(2000).then(() => {
+      setRefreshing(false);
+    });
   }, []);
 
   const jumpToAction = DrawerActions.jumpTo('WebViewPage');
-
   return (
     <>
       <View
@@ -58,7 +73,9 @@ const HomePage = ({ user, navigation }) => {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text style={{ color: 'white', fontSize: 26 }}>십자수</Text>
+              <Text style={{ color: 'white', fontSize: 20 }}>
+                {hobby && hobby[randomNumber].name}
+              </Text>
             </View>
             <View style={{ marginBottom: 10 }} />
             <Text style={{ fontSize: 20 }}>이런 취미는 {'\n'} 어떠세요?</Text>
@@ -76,7 +93,7 @@ const HomePage = ({ user, navigation }) => {
           </View>
         </View>
 
-        <MyCarousel />
+        <MyCarousel hobby={hobby} randomNumber={randomNumber} />
       </ScrollView>
     </>
   );
