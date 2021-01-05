@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 const MyPage = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>MyPage</Text>
+      <Text>안녕하세요</Text>
     </View>
   );
 };

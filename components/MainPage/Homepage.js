@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   View,
   Text,
@@ -33,7 +33,7 @@ const HomePage = ({
   const onRefresh = useCallback(() => {
     setRefreshing(true);
 
-    wait(2000).then(() => {
+    wait(100).then(() => {
       setRefreshing(false);
       generateRandomHobby();
     });
@@ -53,7 +53,7 @@ const HomePage = ({
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text style={{ fontSize: 30 }}>홉송이</Text>
+        <Text style={{ fontSize: 25 }}>당신을 위한 추천</Text>
       </View>
       <View style={{ marginBottom: 40 }} />
       <ScrollView
@@ -66,18 +66,20 @@ const HomePage = ({
               {user && user._auth._user.displayName}님,
             </Text>
             <View style={{ marginBottom: 10 }} />
-            <View
+
+            <Text
               style={{
-                width: 80,
-                height: 50,
-                backgroundColor: 'black',
-                justifyContent: 'center',
-                alignItems: 'center',
+                color: 'white',
+                fontSize: 20,
+                backgroundColor: 'green',
+                paddingHorizontal: 10,
+                paddingVertical: 10,
+                borderRadius: 8,
+                textAlign: 'center',
               }}>
-              <Text style={{ color: 'white', fontSize: 20 }}>
-                {hobby && hobby[randomNumber].name}
-              </Text>
-            </View>
+              {hobby && hobby[randomNumber].name}
+            </Text>
+
             <View style={{ marginBottom: 10 }} />
             <Text style={{ fontSize: 20 }}>이런 취미는 {'\n'} 어떠세요?</Text>
           </View>
@@ -93,7 +95,6 @@ const HomePage = ({
             />
           </View>
         </View>
-
         <MyCarousel hobby={hobby} randomNumber={randomNumber} />
       </ScrollView>
     </>

@@ -57,36 +57,36 @@ export const DrawerContent = (props) => {
 
           <Drawer.Section style={styles.drawerSection}>
             <DrawerItem
-              // icon={({ color, size }) => (
-              //   <Icon name="home-outline" color={color} size={size} />
-              // )}
+              icon={({ color, size }) => (
+                <Icon name="home-outline" color={color} size={size} />
+              )}
               label="홈으로"
               onPress={() => {
                 props.navigation.navigate('HomePage');
               }}
             />
             <DrawerItem
-              // icon={({ color, size }) => (
-              //   <Icon name="account-outline" color={color} size={size} />
-              // )}
+              icon={({ color, size }) => (
+                <Icon name="account-outline" color={color} size={size} />
+              )}
               label="취미목록"
               onPress={() => {
                 props.navigation.navigate('HobbyListPage');
               }}
             />
             <DrawerItem
-              // icon={({ color, size }) => (
-              //   <Icon name="bookmark-outline" color={color} size={size} />
-              // )}
+              icon={({ color, size }) => (
+                <Icon name="bookmark-outline" color={color} size={size} />
+              )}
               label="취미공유"
               onPress={() => {
                 props.navigation.navigate('HobbySharePage');
               }}
             />
             <DrawerItem
-              // icon={({ color, size }) => (
-              //   <Icon name="settings-outline" color={color} size={size} />
-              // )}
+              icon={({ color, size }) => (
+                <Icon name="account-circle-outline" color={color} size={size} />
+              )}
               label="마이페이지"
               onPress={() => {
                 props.navigation.navigate('MyPage');
@@ -97,10 +97,10 @@ export const DrawerContent = (props) => {
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
-          // icon={({ color, size }) => (
-          //   <Icon name="exit-to-app" color={color} size={size} />
-          // )}
-          label="Sign Out"
+          icon={({ color, size }) => (
+            <Icon name="exit-to-app" color={color} size={size} />
+          )}
+          label="로그아웃"
           onPress={onUserLogOut}
         />
       </Drawer.Section>

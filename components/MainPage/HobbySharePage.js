@@ -13,7 +13,7 @@ const HobbySharePage = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text style={{ fontSize: 30 }}>홉송이</Text>
+        <Text style={{ fontSize: 25 }}>당신을 위한 추천</Text>
       </View>
       <View style={{ marginBottom: 40 }} />
     </>

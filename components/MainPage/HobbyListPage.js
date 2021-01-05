@@ -1,9 +1,61 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import { View, Text, Dimensions, ScrollView, Image } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+  View,
+  Text,
+  Dimensions,
+  ScrollView,
+  Image,
+  RefreshControl,
+} from 'react-native';
 
-const HobbyListPage = () => {
-  const HobbyListHeight = Dimensions.get('window').height;
+const wait = (timeout) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, timeout);
+  });
+};
+
+const HobbyListPage = ({ hobby }) => {
+  const HobbyListHeight = Dimensions.get('window').height * 1.5;
+  const [refreshing, setRefreshing] = useState(false);
+  const [randomNumberArray, setRandomNumberArray] = useState([]);
+  const [randomNumberFromOneToTen, setRandomNumberFromOneToTen] = useState([]);
+
+  for (let i = 0; i < hobby.length; i++) {
+    randomNumberArray.push(i);
+    if (i < 10) {
+      randomNumberFromOneToTen.push(i);
+    }
+  }
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+
+    wait(100).then(() => {
+      setRefreshing(false);
+      setRandomNumberArray(shuffleArray(randomNumberArray));
+      setRandomNumberFromOneToTen(shuffleArray(randomNumberFromOneToTen));
+    });
+  }, []);
+
+  useEffect(() => {
+    setRandomNumberArray(shuffleArray(randomNumberArray));
+    setRandomNumberFromOneToTen(shuffleArray(randomNumberFromOneToTen));
+  }, []);
+
+  // useEffect(() => {
+  //   setRandomNumberArray(shuffleArray(randomNumberArray));
+  //   setRandomNumberFromOneToTen(shuffleArray(randomNumberFromOneToTen));
+  // }, [randomNumberArray, randomNumberFromOneToTen]);
+
   return (
     <>
       <View
@@ -14,47 +66,91 @@ const HobbyListPage = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text style={{ fontSize: 30 }}>홉송이</Text>
+        <Text style={{ fontSize: 25 }}>당신을 위한 추천</Text>
       </View>
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
         <View
           style={{
             height: HobbyListHeight,
             flexDirection: 'row',
           }}>
-          <View style={{ borderWidth: 0.5, flex: 0.47 }}>
-            <View style={{ borderWidth: 0.5, height: HobbyListHeight / 5 }}>
+          <View style={{ flex: 0.47, flexDirection: 'column' }}>
+            <Image
+              source={{
+                uri:
+                  hobby &&
+                  hobby[randomNumberArray[0]].image[
+                    randomNumberFromOneToTen[0]
+                  ],
+              }}
+              style={{ flex: 0.3, borderWidth: 0.5, borderColor: '#f0f0f0' }}
+            />
+            <Image
+              source={{
+                uri:
+                  hobby &&
+                  hobby[randomNumberArray[1]].image[
+                    randomNumberFromOneToTen[1]
+                  ],
+              }}
+              style={{ flex: 0.25, borderWidth: 0.5, borderColor: '#f0f0f0' }}
+            />
+            <Image
+              source={{
+                uri:
+                  hobby &&
+                  hobby[randomNumberArray[2]].image[
+                    randomNumberFromOneToTen[2]
+                  ],
+              }}
+              style={{ flex: 0.3, borderWidth: 0.5, borderColor: '#f0f0f0' }}
+            />
+            <View style={{ flex: 0.4 }}>
               <Image
                 source={{
                   uri:
-                    'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMjNfNDMg%2FMDAxNjA2MTA3NjgwNTY3.0dmh36Ntn8CxUOukg-ydWw6QBl6ElAkYGuBlCQFkSj8g.u2jVHORHxO-AeuXTL66M6AP85bF2OaWhPuGpR8rGFbkg.JPEG.fhzkxms%2FKakaoTalk_20201123_140002812.jpg&type=sc960_832',
-                }}
-                style={{ flex: 1 }}
-              />
-            </View>
-            <View
-              style={{ borderWidth: 0.5, height: HobbyListHeight / 5 }}></View>
-            <View
-              style={{ borderWidth: 0.5, height: HobbyListHeight / 5 }}></View>
-            <View
-              style={{ borderWidth: 0.5, height: HobbyListHeight / 5 }}></View>
-            <View style={{ borderWidth: 0.5, height: HobbyListHeight / 5 }}>
-              <Image
-                source={{
-                  uri:
-                    'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMjNfNDMg%2FMDAxNjA2MTA3NjgwNTY3.0dmh36Ntn8CxUOukg-ydWw6QBl6ElAkYGuBlCQFkSj8g.u2jVHORHxO-AeuXTL66M6AP85bF2OaWhPuGpR8rGFbkg.JPEG.fhzkxms%2FKakaoTalk_20201123_140002812.jpg&type=sc960_832',
+                    hobby &&
+                    hobby[randomNumberArray[3]].image[
+                      randomNumberFromOneToTen[3]
+                    ],
                 }}
                 style={{ flex: 1 }}
               />
             </View>
           </View>
-          <View style={{ borderWidth: 0.5, flex: 0.53 }}>
+          <View style={{ flex: 0.53 }}>
             <Image
               source={{
                 uri:
-                  'https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDExMjNfNDMg%2FMDAxNjA2MTA3NjgwNTY3.0dmh36Ntn8CxUOukg-ydWw6QBl6ElAkYGuBlCQFkSj8g.u2jVHORHxO-AeuXTL66M6AP85bF2OaWhPuGpR8rGFbkg.JPEG.fhzkxms%2FKakaoTalk_20201123_140002812.jpg&type=sc960_832',
+                  hobby &&
+                  hobby[randomNumberArray[4]].image[
+                    randomNumberFromOneToTen[4]
+                  ],
               }}
-              style={{ flex: 1 }}
+              style={{ flex: 0.4, borderWidth: 0.5, borderColor: '#f0f0f0' }}
+            />
+            <Image
+              source={{
+                uri:
+                  hobby &&
+                  hobby[randomNumberArray[5]].image[
+                    randomNumberFromOneToTen[5]
+                  ],
+              }}
+              style={{ flex: 0.2, borderWidth: 0.5, borderColor: '#f0f0f0' }}
+            />
+            <Image
+              source={{
+                uri:
+                  hobby &&
+                  hobby[randomNumberArray[6]].image[
+                    randomNumberFromOneToTen[6]
+                  ],
+              }}
+              style={{ flex: 0.4, borderWidth: 0.5, borderColor: '#f0f0f0' }}
             />
           </View>
         </View>

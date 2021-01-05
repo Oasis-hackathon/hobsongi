@@ -18,7 +18,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
       illustration: hobby[randomNumber].image[0],
     },
     {
-      title: hobby[randomNumber].name,
+      title: `집에서 특별한 취미 어떠세요?`,
       illustration: hobby[randomNumber].image[1],
     },
     {
@@ -26,12 +26,32 @@ const MyCarousel = ({ hobby, randomNumber }) => {
       illustration: hobby[randomNumber].image[2],
     },
     {
-      title: hobby[randomNumber].name,
+      title: `집에서 특별한 취미 어떠세요?`,
       illustration: hobby[randomNumber].image[3],
     },
     {
       title: hobby[randomNumber].name,
       illustration: hobby[randomNumber].image[4],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[5],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[6],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[7],
+    },
+    {
+      title: hobby[randomNumber].name,
+      illustration: hobby[randomNumber].image[8],
+    },
+    {
+      title: `추천이 마음에 드신다면 ${'\n'}상단 아이콘을 눌러 구매해보세요`,
+      illustration: hobby[randomNumber].image[9],
     },
   ]);
 
@@ -44,7 +64,7 @@ const MyCarousel = ({ hobby, randomNumber }) => {
         illustration: hobby[randomNumber].image[0],
       },
       {
-        title: hobby[randomNumber].name,
+        title: `집에서 특별한 취미 어떠세요?`,
         illustration: hobby[randomNumber].image[1],
       },
       {
@@ -52,12 +72,32 @@ const MyCarousel = ({ hobby, randomNumber }) => {
         illustration: hobby[randomNumber].image[2],
       },
       {
-        title: hobby[randomNumber].name,
+        title: `집에서 특별한 취미 어떠세요?`,
         illustration: hobby[randomNumber].image[3],
       },
       {
         title: hobby[randomNumber].name,
         illustration: hobby[randomNumber].image[4],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[5],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[6],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[7],
+      },
+      {
+        title: hobby[randomNumber].name,
+        illustration: hobby[randomNumber].image[8],
+      },
+      {
+        title: `추천이 마음에 드신다면 ${'\n'}상단 아이콘을 눌러 구매해보세요`,
+        illustration: hobby[randomNumber].image[9],
       },
     ]);
   }, [randomNumber, hobby]);
@@ -100,6 +140,7 @@ export default MyCarousel;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 20,
   },
   item: {
     width: screenWidth - 60,
@@ -114,5 +155,10 @@ const styles = StyleSheet.create({
   image: {
     ...StyleSheet.absoluteFillObject,
     resizeMode: 'cover',
+  },
+  title: {
+    textAlign: 'center',
+    marginTop: 10,
+    fontSize: 20,
   },
 });

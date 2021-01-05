@@ -387,7 +387,9 @@ const MainDrawerNav = ({ user }) => {
         )}
       </Drawer.Screen>
       <Drawer.Screen name="HobbyListPage">
-        {(props) => <HobbyListPage {...props} />}
+        {(props) => (
+          <HobbyListPage {...props} hobby={hobby} randomNumber={randomNumber} />
+        )}
       </Drawer.Screen>
       <Drawer.Screen name="HobbySharePage" component={HobbySharePage} />
       <Drawer.Screen name="MyPage" component={MyPage} />
