@@ -2,7 +2,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import PageRouter from './components/PageRouter';
+import PageRouter from './components/NavigationPage/PageRouter';
 
 const App = () => {
   return (
