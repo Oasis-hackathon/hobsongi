@@ -8,7 +8,6 @@ import {
   ScrollView,
   Alert,
   ActivityIndicator,
-  Dimensions,
 } from 'react-native';
 import SplashPage from '../SplashPage';
 import SwitchToggle from '@dooboo-ui/native-switch-toggle';
@@ -17,19 +16,17 @@ import md5 from 'md5';
 import database from '@react-native-firebase/database';
 
 const AuthPage = () => {
-  const [isLoading, setLoading] = useState(false);
-  const [loginLoading, setLoginLoading] = useState(false);
+  const [isloading, setLoading] = useState(false);
+  const [showSplash, setShowSplash] = useState(false);
   const [switchOn, setSwitchOn] = useState(false);
   const [email, setEmail] = useState('');
   const [nickName, setNickName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const appHeight = Dimensions.get('window').height;
-
   useEffect(() => {
     let timer = setTimeout(() => {
-      setLoading(true);
+      setShowSplash(true);
     }, 2000);
     return () => {
       clearTimeout(timer);
@@ -37,12 +34,12 @@ const AuthPage = () => {
   }, []);
 
   const onLoginUser = () => {
-    setLoginLoading(true);
+    setLoading(true);
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         console.log('로그인 완료!');
-        setLoginLoading(false);
+        setLoading(false);
       })
       .catch((error) => {
         if (error.code === 'auth/user-not-found') {
@@ -55,15 +52,17 @@ const AuthPage = () => {
             { text: '확인', onPress: console.log('로그인 오류') },
           ]);
         }
-        // console.error(error);
+        setLoading(false);
       });
   };
 
   const onCreateUser = async () => {
+    setLoading(true);
     if (password !== confirmPassword) {
       Alert.alert('에러', '비밀번호가 일치하지 않습니다. 다시 입력해주세요', [
         { text: '확인' },
       ]);
+      setLoading(false);
       return;
     }
     try {
@@ -83,32 +82,36 @@ const AuthPage = () => {
         name: userCredentials.user._auth._user.displayName,
         image: userCredentials.user._auth._user.photoURL,
       });
+      setLoading(false);
       //////////////// realtime database에 넣기
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         Alert.alert('에러', '이미 존재하는 이메일입니다.', [
           { text: '확인', onPress: console.log('회원가입 오류') },
         ]);
+        setLoading(false);
       }
       if (error.code === 'auth/invalid-email') {
         Alert.alert('에러', '올바르지 않은 이메일입니다.', [
           { text: '확인', onPress: console.log('회원가입 오류') },
         ]);
+        setLoading(false);
       }
       if (error.code === 'auth/weak-password') {
         Alert.alert('에러', '비밀번호는 6자리 이상이여야 합니다.', [
           { text: '확인', onPress: console.log('회원가입 오류') },
         ]);
+        setLoading(false);
       }
     }
   };
-  if (!isLoading) {
+  if (!showSplash) {
     return <SplashPage />;
   }
 
   return (
     <>
-      {loginLoading && (
+      {isloading && (
         <View
           style={{
             position: 'absolute',
@@ -125,7 +128,9 @@ const AuthPage = () => {
           <ActivityIndicator size="large" color="#D0E8F2" />
         </View>
       )}
-      <ScrollView style={{ flex: 1, backgroundColor: '#D0E8F2' }}>
+      <ScrollView
+        style={{ flex: 1, backgroundColor: '#D0E8F2' }}
+        showsVerticalScrollIndicator={false}>
         <View
           style={{
             alignItems: 'center',

@@ -8,7 +8,7 @@ const HobbySharePage = ({ user }) => {
   console.log(user);
   return (
     <>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, height: Height * 3 + 300 }}>
           <View
             style={{

@@ -88,6 +88,7 @@ const HobbyListPage = ({ hobby, navigation }) => {
         }}
       />
       <ScrollView
+        showsVerticalScrollIndicator={false}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>

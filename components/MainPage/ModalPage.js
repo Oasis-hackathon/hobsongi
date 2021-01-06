@@ -40,10 +40,12 @@ const ModalPage = ({
               borderBottomWidth: 0.5,
               borderColor: 'gray',
             }}>
-            <Text style={{ fontSize: 18 }}>{hobbyInfo && hobbyInfo.name}</Text>
+            <Text style={{ fontSize: 26, fontFamily: '야놀자 야체 Regular' }}>
+              {hobbyInfo && hobbyInfo.name}
+            </Text>
           </View>
           <View style={{ flex: 1, padding: 20 }}>
-            <Text>{hobbyInfo && hobbyInfo.description}</Text>
+            <Text style={{}}>{hobbyInfo && hobbyInfo.description}</Text>
           </View>
           <View
             style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
