@@ -76,7 +76,9 @@ const HobbyListPage = ({ hobby, navigation }) => {
           alignItems: 'center',
           backgroundColor: '#D0E8F2',
         }}>
-        <Text style={{ fontSize: 30, fontFamily: '야놀자 야체 Regular' }}>당신을 위한 추천</Text>
+        <Text style={{ fontSize: 30, fontFamily: '야놀자 야체 Regular' }}>
+          당신을 위한 추천
+        </Text>
       </View>
       <View
         style={{
