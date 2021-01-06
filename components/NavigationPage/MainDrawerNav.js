@@ -4,7 +4,6 @@ import { Dimensions } from 'react-native';
 import HomePage from '../MainPage/HomePage';
 import HobbyListPage from '../MainPage/HobbyListPage';
 import HobbySharePage from '../MainPage/HobbySharePage';
-import MyPage from '../MainPage/MyPage';
 import WebViewPage from '../WebViewPage/WebViewPage';
 import WebViewOnlyLinkPage from '../WebViewPage/WebViewOnlyLinkPage';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -395,7 +394,6 @@ const MainDrawerNav = ({ user }) => {
       <Drawer.Screen name="HobbySharePage">
         {(props) => <HobbySharePage {...props} user={user} />}
       </Drawer.Screen>
-      <Drawer.Screen name="MyPage" component={MyPage} />
       <Drawer.Screen name="WebViewPage" component={WebViewPage} />
       <Drawer.Screen
         name="WebViewOnlyLinkPage"

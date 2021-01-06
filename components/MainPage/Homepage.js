@@ -56,7 +56,14 @@ const HomePage = ({
           backgroundColor: '#79A3B1',
           elevation: 5,
         }}>
-        <Text style={{ fontSize: 25, color: 'white' }}>당신을 위한 추천</Text>
+        <Text
+          style={{
+            fontSize: 30,
+            color: 'white',
+            fontFamily: '야놀자 야체 Regular',
+          }}>
+          당신을 위한 추천
+        </Text>
       </View>
       <ScrollView
         refreshControl={
@@ -76,7 +83,7 @@ const HomePage = ({
             elevation: 5,
           }}>
           <View style={{ marginLeft: 50, marginTop: 20 }}>
-            <Text style={{ fontSize: 20, fontWeight: '700' }}>
+            <Text style={{ fontSize: 26, fontFamily: '야놀자 야체 Regular' }}>
               {user && user._auth._user.displayName}님,
             </Text>
             <View style={{ marginBottom: 10 }} />
@@ -84,16 +91,16 @@ const HomePage = ({
             <Text
               style={{
                 color: 'gray',
-                fontSize: 20,
+                fontSize: 28,
                 paddingVertical: 5,
                 borderRadius: 8,
-                fontWeight:'700'
+                fontFamily: '야놀자 야체 Regular',
               }}>
               {hobby && hobby[randomNumber].name}
             </Text>
 
             <View style={{ marginBottom: 10 }} />
-            <Text style={{ fontSize: 20, fontFamily: '', fontWeight: '700' }}>
+            <Text style={{ fontSize: 26, fontFamily: '야놀자 야체 Regular' }}>
               이런 취미는 어떠세요?
             </Text>
           </View>

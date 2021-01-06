@@ -36,8 +36,18 @@ const HobbySharePage = ({ user }) => {
                 }}
               />
               <View style={{ flexDirection: 'column' }}>
-                <Text style={{ fontSize: 16 }}>홉송이1</Text>
-                <Text style={{ color: 'gray' }}>@skskff@naver.com</Text>
+                <Text
+                  style={{ fontSize: 18, fontFamily: '야놀자 야체 Regular' }}>
+                  홉송이1
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    fontFamily: '야놀자 야체 Regular',
+                    fontSize: 18,
+                  }}>
+                  skskff@naver.com
+                </Text>
               </View>
             </View>
             <Image
@@ -56,7 +66,12 @@ const HobbySharePage = ({ user }) => {
               <Icon name="heart-outline" size={25} style={{ opacity: 0.5 }} />
               <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
             </View>
-            <Text style={{ color: 'gray' }}>
+            <Text
+              style={{
+                color: 'gray',
+                fontFamily: '야놀자 야체 Regular',
+                fontSize: 18,
+              }}>
               #피포페인팅 #퍼즐페인팅 #같이해봐요 #코로나
             </Text>
           </View>
@@ -89,8 +104,18 @@ const HobbySharePage = ({ user }) => {
                 }}
               />
               <View style={{ flexDirection: 'column' }}>
-                <Text style={{ fontSize: 16 }}>홉송이2</Text>
-                <Text style={{ color: 'gray' }}>@tkdqja4122@naver.com</Text>
+                <Text
+                  style={{ fontSize: 18, fontFamily: '야놀자 야체 Regular' }}>
+                  홉송이2
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    fontSize: 18,
+                    fontFamily: '야놀자 야체 Regular',
+                  }}>
+                  tkdqja4122@naver.com
+                </Text>
               </View>
             </View>
             <Image
@@ -109,7 +134,12 @@ const HobbySharePage = ({ user }) => {
               <Icon name="heart" size={25} style={{ opacity: 0.5 }} />
               <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
             </View>
-            <Text style={{ color: 'gray' }}>
+            <Text
+              style={{
+                color: 'gray',
+                fontSize: 18,
+                fontFamily: '야놀자 야체 Regular',
+              }}>
               #테라리움 만들기 #원예활동 #같이취미해요
             </Text>
           </View>
@@ -142,8 +172,18 @@ const HobbySharePage = ({ user }) => {
                 }}
               />
               <View style={{ flexDirection: 'column' }}>
-                <Text style={{ fontSize: 16 }}>코로나싫어</Text>
-                <Text style={{ color: 'gray' }}>@fkssf12@naver.com</Text>
+                <Text
+                  style={{ fontSize: 18, fontFamily: '야놀자 야체 Regular' }}>
+                  코로나싫어
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    fontSize: 18,
+                    fontFamily: '야놀자 야체 Regular',
+                  }}>
+                  fkssf12@naver.com
+                </Text>
               </View>
             </View>
             <Image
@@ -162,7 +202,12 @@ const HobbySharePage = ({ user }) => {
               <Icon name="heart-outline" size={25} style={{ opacity: 0.5 }} />
               <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
             </View>
-            <Text style={{ color: 'gray' }}>
+            <Text
+              style={{
+                color: 'gray',
+                fontSize: 18,
+                fontFamily: '야놀자 야체 Regular',
+              }}>
               #테라리움 #새로운 취미 #초록정원
             </Text>
           </View>
@@ -195,8 +240,18 @@ const HobbySharePage = ({ user }) => {
                 }}
               />
               <View style={{ flexDirection: 'column' }}>
-                <Text style={{ fontSize: 16 }}>코딩좋아</Text>
-                <Text style={{ color: 'gray' }}>@tsff231@naver.com</Text>
+                <Text
+                  style={{ fontSize: 18, fontFamily: '야놀자 야체 Regular' }}>
+                  코딩좋아
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    fontSize: 18,
+                    fontFamily: '야놀자 야체 Regular',
+                  }}>
+                  tsff231@naver.com
+                </Text>
               </View>
             </View>
             <Image
@@ -215,7 +270,14 @@ const HobbySharePage = ({ user }) => {
               <Icon name="heart" size={25} style={{ opacity: 0.5 }} />
               <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
             </View>
-            <Text style={{ color: 'gray' }}>#레진아트 #영롱 #예쁨</Text>
+            <Text
+              style={{
+                color: 'gray',
+                fontSize: 18,
+                fontFamily: '야놀자 야체 Regular',
+              }}>
+              #레진아트 #영롱 #예쁨
+            </Text>
           </View>
 
           <View style={{ marginBottom: 20 }} />
@@ -246,8 +308,18 @@ const HobbySharePage = ({ user }) => {
                 }}
               />
               <View style={{ flexDirection: 'column' }}>
-                <Text style={{ fontSize: 16 }}>홉송이가</Text>
-                <Text style={{ color: 'gray' }}>@hobsongi@naver.com</Text>
+                <Text
+                  style={{ fontSize: 18, fontFamily: '야놀자 야체 Regular' }}>
+                  홉송이가
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    fontSize: 18,
+                    fontFamily: '야놀자 야체 Regular',
+                  }}>
+                  hobsongi@naver.com
+                </Text>
               </View>
             </View>
             <Image
@@ -266,7 +338,12 @@ const HobbySharePage = ({ user }) => {
               <Icon name="heart" size={25} style={{ opacity: 0.5 }} />
               <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
             </View>
-            <Text style={{ color: 'gray' }}>
+            <Text
+              style={{
+                color: 'gray',
+                fontSize: 18,
+                fontFamily: '야놀자 야체 Regular',
+              }}>
               #페이퍼커팅 #칼조심 #무드등 #분위기
             </Text>
           </View>
@@ -299,8 +376,18 @@ const HobbySharePage = ({ user }) => {
                 }}
               />
               <View style={{ flexDirection: 'column' }}>
-                <Text style={{ fontSize: 16 }}>김아무개12</Text>
-                <Text style={{ color: 'gray' }}>@toss122@naver.com</Text>
+                <Text
+                  style={{ fontSize: 18, fontFamily: '야놀자 야체 Regular' }}>
+                  김아무개12
+                </Text>
+                <Text
+                  style={{
+                    color: 'gray',
+                    fontSize: 18,
+                    fontFamily: '야놀자 야체 Regular',
+                  }}>
+                  toss122@naver.com
+                </Text>
               </View>
             </View>
             <Image
@@ -319,7 +406,12 @@ const HobbySharePage = ({ user }) => {
               <Icon name="heart" size={25} style={{ opacity: 0.5 }} />
               <Icon name="message-outline" size={25} style={{ opacity: 0.5 }} />
             </View>
-            <Text style={{ color: 'gray' }}>
+            <Text
+              style={{
+                color: 'gray',
+                fontSize: 18,
+                fontFamily: '야놀자 야체 Regular',
+              }}>
               #미니어처 #DIY #숲속의집 #난이도높음 #미니조명 #인테리어
             </Text>
           </View>

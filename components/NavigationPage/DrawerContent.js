@@ -60,7 +60,8 @@ export const DrawerContent = (props) => {
               icon={({ color, size }) => (
                 <Icon name="home-outline" color={color} size={size} />
               )}
-              label="홈으로"
+              label="홈"
+              labelStyle={{ fontFamily: '야놀자 야체 Regular', fontSize: 18 }}
               onPress={() => {
                 props.navigation.navigate('HomePage');
               }}
@@ -70,6 +71,7 @@ export const DrawerContent = (props) => {
                 <Icon name="account-outline" color={color} size={size} />
               )}
               label="취미목록"
+              labelStyle={{ fontFamily: '야놀자 야체 Regular', fontSize: 18 }}
               onPress={() => {
                 props.navigation.navigate('HobbyListPage');
               }}
@@ -79,17 +81,9 @@ export const DrawerContent = (props) => {
                 <Icon name="bookmark-outline" color={color} size={size} />
               )}
               label="취미공유"
+              labelStyle={{ fontFamily: '야놀자 야체 Regular', fontSize: 18 }}
               onPress={() => {
                 props.navigation.navigate('HobbySharePage');
-              }}
-            />
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="account-circle-outline" color={color} size={size} />
-              )}
-              label="마이페이지"
-              onPress={() => {
-                props.navigation.navigate('MyPage');
               }}
             />
           </Drawer.Section>
@@ -101,6 +95,7 @@ export const DrawerContent = (props) => {
             <Icon name="exit-to-app" color={color} size={size} />
           )}
           label="로그아웃"
+          labelStyle={{ fontFamily: '야놀자 야체 Regular', fontSize: 18 }}
           onPress={onUserLogOut}
         />
       </Drawer.Section>
@@ -121,8 +116,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   caption: {
-    fontSize: 14,
+    fontSize: 16,
     lineHeight: 14,
+    fontFamily: '야놀자 야체 Regular',
   },
   row: {
     marginTop: 20,
@@ -135,8 +131,9 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   paragraph: {
-    fontWeight: 'bold',
     marginRight: 3,
+    fontSize: 16,
+    fontFamily: '야놀자 야체 Regular',
   },
   drawerSection: {
     marginTop: 15,

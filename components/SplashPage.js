@@ -13,7 +13,14 @@ const SplashPage = () => {
         alignItems: 'center',
         backgroundColor: 'white',
       }}>
-      <Text style={{ fontSize: 43, color: '#79A3B1' }}>홉송이</Text>
+      <Text
+        style={{
+          fontSize: 50,
+          color: '#79A3B1',
+          fontFamily: '야놀자 야체 Regular',
+        }}>
+        홉송이
+      </Text>
       <LottieView
         autoPlay
         style={{ height: 100, width: 100 }}

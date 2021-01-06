@@ -106,7 +106,14 @@ const AuthPage = () => {
           alignItems: 'center',
           paddingVertical: 90,
         }}>
-        <Text style={{ fontSize: 45, marginBottom: 40 }}>홉송이</Text>
+        <Text
+          style={{
+            fontSize: 50,
+            marginBottom: 40,
+            fontFamily: '야놀자 야체 Bold',
+          }}>
+          홉송이
+        </Text>
 
         <SwitchToggle
           buttonText={switchOn ? '회원가입' : '로그인'}
@@ -128,9 +135,17 @@ const AuthPage = () => {
             alignItems: 'center',
             justifyContent: 'flex-start',
           }}
-          buttonTextStyle={{ fontSize: 20 }}
-          textRightStyle={{ fontSize: 20 }}
-          textLeftStyle={{ fontSize: 20 }}
+          buttonTextStyle={{ fontSize: 26, fontFamily: '야놀자 야체 Regular' }}
+          textRightStyle={{
+            fontSize: 26,
+            fontFamily: '야놀자 야체 Regular',
+            color: 'white',
+          }}
+          textLeftStyle={{
+            fontSize: 26,
+            fontFamily: '야놀자 야체 Regular',
+            color: 'white',
+          }}
           containerStyle={{
             marginTop: 16,
             width: 250,
@@ -263,7 +278,9 @@ const AuthPage = () => {
             elevation: 5,
           }}
           onPress={switchOn ? onCreateUser : onLoginUser}>
-          <Text style={{ fontSize: 24 }}>{switchOn ? '제출' : '로그인'}</Text>
+          <Text style={{ fontSize: 26, fontFamily: '야놀자 야체 Regular' }}>
+            {switchOn ? '제출' : '로그인'}
+          </Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
