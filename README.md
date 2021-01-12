@@ -1,7 +1,10 @@
 # ❄ hobsongi(홉송이) 🌹
-## [홉송이 앱 시연영상 보러가기🚀](https://photos.google.com/share/AF1QipN-QlL0FnNSUGHpz6pUzjVgKuquqTtdn-nZR3R3Mm2GB5FZPZ-EPKy9NAA50Gt-vQ/photo/AF1QipN3WlPlzWZcPafJdLejFze7i3Dmuml53T-Os_ry?key=XzczdkN0ZU9TUzZsVi1oS1NSWXNzZW1MWFNjODJn)
+## 홉송이 앱 시연영상 🚀 (아래영상을 클릭해주세요)
+[![Video Label](https://user-images.githubusercontent.com/43921054/104270412-cf742b00-54db-11eb-8e96-db1d624c2d40.png)](https://www.youtube.com/watch?v=nDTC2sGPuxk&feature=youtu.be)
 
-## [디바이스 시연영상 보러가기🚀](https://photos.google.com/share/AF1QipPQjjUlGqVf58ikGmMEGGIZLRvy978_AUz__0prcFicnK3QglWxByYOIWDqU9FQdg?key=NkJoS2w5UFduaV9fdUNoV1RtcjZZcTEtM2pVOHhB)
+
+## 디바이스 시연영상 🚀 (아래영상을 클릭해주세요)
+[![Video Label](https://user-images.githubusercontent.com/43921054/104270735-8c668780-54dc-11eb-9001-188359f2d5f2.png)](https://www.youtube.com/watch?v=zpSc-PGEjcI&list=PLFt1iggN41KuzSyq0qRHDlgV9lWqYTAPV&index=2)
 
 ### 저희 '홉송이'는 취미를 뜻하는 영어인 hobby의 'hob'과 꽃, 눈, 열매 등의 낱낱의 작고 소담한 덩이나 덩어리를 나타내는 '송이'를 합친 이름입니다.
 
